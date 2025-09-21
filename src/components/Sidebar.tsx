@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { useAppDispatch, useAppSelector } from '../hooks/redux';
 import { setCurrentRoom, setRooms } from '../store/chatSlice';
 import { chatAPI } from '../utils/api';
+import type { ChatRoom } from '../types';
 
 const SidebarContainer = styled.aside`
   width: 280px;
@@ -111,7 +112,7 @@ const Sidebar: React.FC = () => {
     loadRooms();
   }, [dispatch, currentRoom]);
 
-  const handleRoomSelect = (room: any) => {
+  const handleRoomSelect = (room: ChatRoom) => {
     dispatch(setCurrentRoom(room));
   };
 

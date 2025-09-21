@@ -177,7 +177,7 @@ const ChatWindow: React.FC = () => {
     if (currentRoom) {
       loadMessages();
     }
-  }, [currentRoom?.id]);
+  }, [currentRoom?.id]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Auto-scroll to bottom
   useEffect(() => {
